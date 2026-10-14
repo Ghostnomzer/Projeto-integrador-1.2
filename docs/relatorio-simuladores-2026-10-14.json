@@ -1,0 +1,3241 @@
+{
+  "data": "2026-10-14",
+  "fuso": "America/Sao_Paulo",
+  "escopo": "Aquecimento, água, automação e comparativo.",
+  "site": "https://ghostnomzer.github.io/Projeto-integrador-1.2/",
+  "repositorio": "https://github.com/Ghostnomzer/Projeto-integrador-1.2",
+  "base_revisada": "0684a05ce102b67e829e0f3a8ffcf6cb99b98a7e",
+  "navegadores": [
+    {
+      "motor": "chromium",
+      "versao": "151.0.7922.34"
+    },
+    {
+      "motor": "firefox",
+      "versao": "153.0"
+    },
+    {
+      "motor": "webkit",
+      "versao": "26.5"
+    }
+  ],
+  "casos_funcionais": [
+    {
+      "navegador": "chromium",
+      "caso": "Abas: setas, Home, End e URL",
+      "aprovado": true,
+      "duracao_s": 1.09
+    },
+    {
+      "navegador": "chromium",
+      "caso": "Aquecimento: todos os parâmetros, exemplos, gráfico e anúncio",
+      "aprovado": true,
+      "duracao_s": 1.68
+    },
+    {
+      "navegador": "chromium",
+      "caso": "Aquecimento: entradas inválidas, Sol zero e meta atingida",
+      "aprovado": true,
+      "duracao_s": 2.92
+    },
+    {
+      "navegador": "chromium",
+      "caso": "Água: parâmetros, limites, tabela e anúncio",
+      "aprovado": true,
+      "duracao_s": 1.1
+    },
+    {
+      "navegador": "chromium",
+      "caso": "Automação: presets, histerese, bloqueios e histórico",
+      "aprovado": true,
+      "duracao_s": 2.62
+    },
+    {
+      "navegador": "chromium",
+      "caso": "Comparativo: custos, tarifa zero e pouca irradiância",
+      "aprovado": true,
+      "duracao_s": 0.24
+    },
+    {
+      "navegador": "firefox",
+      "caso": "Abas: setas, Home, End e URL",
+      "aprovado": true,
+      "duracao_s": 3.46
+    },
+    {
+      "navegador": "firefox",
+      "caso": "Aquecimento: todos os parâmetros, exemplos, gráfico e anúncio",
+      "aprovado": true,
+      "duracao_s": 1.9
+    },
+    {
+      "navegador": "firefox",
+      "caso": "Aquecimento: entradas inválidas, Sol zero e meta atingida",
+      "aprovado": true,
+      "duracao_s": 2.33
+    },
+    {
+      "navegador": "firefox",
+      "caso": "Água: parâmetros, limites, tabela e anúncio",
+      "aprovado": true,
+      "duracao_s": 1.62
+    },
+    {
+      "navegador": "firefox",
+      "caso": "Automação: presets, histerese, bloqueios e histórico",
+      "aprovado": true,
+      "duracao_s": 4.14
+    },
+    {
+      "navegador": "firefox",
+      "caso": "Comparativo: custos, tarifa zero e pouca irradiância",
+      "aprovado": true,
+      "duracao_s": 0.68
+    },
+    {
+      "navegador": "webkit",
+      "caso": "Abas: setas, Home, End e URL",
+      "aprovado": true,
+      "duracao_s": 2.98
+    },
+    {
+      "navegador": "webkit",
+      "caso": "Aquecimento: todos os parâmetros, exemplos, gráfico e anúncio",
+      "aprovado": true,
+      "duracao_s": 1.93
+    },
+    {
+      "navegador": "webkit",
+      "caso": "Aquecimento: entradas inválidas, Sol zero e meta atingida",
+      "aprovado": true,
+      "duracao_s": 1.6
+    },
+    {
+      "navegador": "webkit",
+      "caso": "Água: parâmetros, limites, tabela e anúncio",
+      "aprovado": true,
+      "duracao_s": 1.81
+    },
+    {
+      "navegador": "webkit",
+      "caso": "Automação: presets, histerese, bloqueios e histórico",
+      "aprovado": true,
+      "duracao_s": 4.6
+    },
+    {
+      "navegador": "webkit",
+      "caso": "Comparativo: custos, tarifa zero e pouca irradiância",
+      "aprovado": true,
+      "duracao_s": 0.67
+    }
+  ],
+  "modelos": {
+    "testes": 15,
+    "aprovados": 15
+  },
+  "numericos": [
+    {
+      "navegador": "chromium",
+      "simulador": "calor",
+      "cenario": "referência",
+      "entrada": {
+        "volume": 10000,
+        "area": 12,
+        "inicial": 22,
+        "alvo": 28,
+        "irradiancia": 800,
+        "eficiencia": 65,
+        "perdas": 15
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "chromium",
+      "simulador": "calor",
+      "cenario": "volume-min",
+      "entrada": {
+        "volume": 1000,
+        "area": 12,
+        "inicial": 22,
+        "alvo": 28,
+        "irradiancia": 800,
+        "eficiencia": 65,
+        "perdas": 15
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "chromium",
+      "simulador": "calor",
+      "cenario": "volume-max",
+      "entrada": {
+        "volume": 100000,
+        "area": 12,
+        "inicial": 22,
+        "alvo": 28,
+        "irradiancia": 800,
+        "eficiencia": 65,
+        "perdas": 15
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "chromium",
+      "simulador": "calor",
+      "cenario": "area-min",
+      "entrada": {
+        "volume": 10000,
+        "area": 1,
+        "inicial": 22,
+        "alvo": 28,
+        "irradiancia": 800,
+        "eficiencia": 65,
+        "perdas": 15
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "chromium",
+      "simulador": "calor",
+      "cenario": "area-max",
+      "entrada": {
+        "volume": 10000,
+        "area": 100,
+        "inicial": 22,
+        "alvo": 28,
+        "irradiancia": 800,
+        "eficiencia": 65,
+        "perdas": 15
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "chromium",
+      "simulador": "calor",
+      "cenario": "inicial-min",
+      "entrada": {
+        "volume": 10000,
+        "area": 12,
+        "inicial": 5,
+        "alvo": 28,
+        "irradiancia": 800,
+        "eficiencia": 65,
+        "perdas": 15
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "chromium",
+      "simulador": "calor",
+      "cenario": "inicial-max",
+      "entrada": {
+        "volume": 10000,
+        "area": 12,
+        "inicial": 40,
+        "alvo": 28,
+        "irradiancia": 800,
+        "eficiencia": 65,
+        "perdas": 15
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "chromium",
+      "simulador": "calor",
+      "cenario": "alvo-min",
+      "entrada": {
+        "volume": 10000,
+        "area": 12,
+        "inicial": 22,
+        "alvo": 5,
+        "irradiancia": 800,
+        "eficiencia": 65,
+        "perdas": 15
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "chromium",
+      "simulador": "calor",
+      "cenario": "alvo-max",
+      "entrada": {
+        "volume": 10000,
+        "area": 12,
+        "inicial": 22,
+        "alvo": 40,
+        "irradiancia": 800,
+        "eficiencia": 65,
+        "perdas": 15
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "chromium",
+      "simulador": "calor",
+      "cenario": "irradiancia-min",
+      "entrada": {
+        "volume": 10000,
+        "area": 12,
+        "inicial": 22,
+        "alvo": 28,
+        "irradiancia": 0,
+        "eficiencia": 65,
+        "perdas": 15
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "chromium",
+      "simulador": "calor",
+      "cenario": "irradiancia-max",
+      "entrada": {
+        "volume": 10000,
+        "area": 12,
+        "inicial": 22,
+        "alvo": 28,
+        "irradiancia": 1200,
+        "eficiencia": 65,
+        "perdas": 15
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "chromium",
+      "simulador": "calor",
+      "cenario": "eficiencia-min",
+      "entrada": {
+        "volume": 10000,
+        "area": 12,
+        "inicial": 22,
+        "alvo": 28,
+        "irradiancia": 800,
+        "eficiencia": 10,
+        "perdas": 15
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "chromium",
+      "simulador": "calor",
+      "cenario": "eficiencia-max",
+      "entrada": {
+        "volume": 10000,
+        "area": 12,
+        "inicial": 22,
+        "alvo": 28,
+        "irradiancia": 800,
+        "eficiencia": 95,
+        "perdas": 15
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "chromium",
+      "simulador": "calor",
+      "cenario": "perdas-min",
+      "entrada": {
+        "volume": 10000,
+        "area": 12,
+        "inicial": 22,
+        "alvo": 28,
+        "irradiancia": 800,
+        "eficiencia": 65,
+        "perdas": 0
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "chromium",
+      "simulador": "calor",
+      "cenario": "perdas-max",
+      "entrada": {
+        "volume": 10000,
+        "area": 12,
+        "inicial": 22,
+        "alvo": 28,
+        "irradiancia": 800,
+        "eficiencia": 65,
+        "perdas": 60
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "chromium",
+      "simulador": "calor",
+      "cenario": "todos-min",
+      "entrada": {
+        "volume": 1000,
+        "area": 1,
+        "inicial": 5,
+        "alvo": 5,
+        "irradiancia": 0,
+        "eficiencia": 10,
+        "perdas": 0
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "chromium",
+      "simulador": "calor",
+      "cenario": "todos-max",
+      "entrada": {
+        "volume": 100000,
+        "area": 100,
+        "inicial": 40,
+        "alvo": 40,
+        "irradiancia": 1200,
+        "eficiencia": 95,
+        "perdas": 60
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "chromium",
+      "simulador": "calor",
+      "cenario": "aquecimento muito lento",
+      "entrada": {
+        "volume": 100000,
+        "area": 1,
+        "inicial": 5,
+        "alvo": 40,
+        "irradiancia": 50,
+        "eficiencia": 10,
+        "perdas": 60
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "chromium",
+      "simulador": "agua",
+      "cenario": "referência",
+      "entrada": {
+        "area": 32,
+        "evaporacao": 5,
+        "dias": 30,
+        "reducao": 80,
+        "horasCoberta": 16
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "chromium",
+      "simulador": "agua",
+      "cenario": "area-min",
+      "entrada": {
+        "area": 1,
+        "evaporacao": 5,
+        "dias": 30,
+        "reducao": 80,
+        "horasCoberta": 16
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "chromium",
+      "simulador": "agua",
+      "cenario": "area-max",
+      "entrada": {
+        "area": 500,
+        "evaporacao": 5,
+        "dias": 30,
+        "reducao": 80,
+        "horasCoberta": 16
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "chromium",
+      "simulador": "agua",
+      "cenario": "evaporacao-min",
+      "entrada": {
+        "area": 32,
+        "evaporacao": 0,
+        "dias": 30,
+        "reducao": 80,
+        "horasCoberta": 16
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "chromium",
+      "simulador": "agua",
+      "cenario": "evaporacao-max",
+      "entrada": {
+        "area": 32,
+        "evaporacao": 15,
+        "dias": 30,
+        "reducao": 80,
+        "horasCoberta": 16
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "chromium",
+      "simulador": "agua",
+      "cenario": "dias-min",
+      "entrada": {
+        "area": 32,
+        "evaporacao": 5,
+        "dias": 1,
+        "reducao": 80,
+        "horasCoberta": 16
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "chromium",
+      "simulador": "agua",
+      "cenario": "dias-max",
+      "entrada": {
+        "area": 32,
+        "evaporacao": 5,
+        "dias": 365,
+        "reducao": 80,
+        "horasCoberta": 16
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "chromium",
+      "simulador": "agua",
+      "cenario": "reducao-min",
+      "entrada": {
+        "area": 32,
+        "evaporacao": 5,
+        "dias": 30,
+        "reducao": 0,
+        "horasCoberta": 16
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "chromium",
+      "simulador": "agua",
+      "cenario": "reducao-max",
+      "entrada": {
+        "area": 32,
+        "evaporacao": 5,
+        "dias": 30,
+        "reducao": 95,
+        "horasCoberta": 16
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "chromium",
+      "simulador": "agua",
+      "cenario": "horasCoberta-min",
+      "entrada": {
+        "area": 32,
+        "evaporacao": 5,
+        "dias": 30,
+        "reducao": 80,
+        "horasCoberta": 0
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "chromium",
+      "simulador": "agua",
+      "cenario": "horasCoberta-max",
+      "entrada": {
+        "area": 32,
+        "evaporacao": 5,
+        "dias": 30,
+        "reducao": 80,
+        "horasCoberta": 24
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "chromium",
+      "simulador": "agua",
+      "cenario": "todos-min",
+      "entrada": {
+        "area": 1,
+        "evaporacao": 0,
+        "dias": 1,
+        "reducao": 0,
+        "horasCoberta": 0
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "chromium",
+      "simulador": "agua",
+      "cenario": "todos-max",
+      "entrada": {
+        "area": 500,
+        "evaporacao": 15,
+        "dias": 365,
+        "reducao": 95,
+        "horasCoberta": 24
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "chromium",
+      "simulador": "comp",
+      "cenario": "referência",
+      "entrada": {
+        "volume": 10000,
+        "inicial": 22,
+        "alvo": 28,
+        "tarifa": 0.9,
+        "irradiancia": 800
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "chromium",
+      "simulador": "comp",
+      "cenario": "volume-min",
+      "entrada": {
+        "volume": 1000,
+        "inicial": 22,
+        "alvo": 28,
+        "tarifa": 0.9,
+        "irradiancia": 800
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "chromium",
+      "simulador": "comp",
+      "cenario": "volume-max",
+      "entrada": {
+        "volume": 100000,
+        "inicial": 22,
+        "alvo": 28,
+        "tarifa": 0.9,
+        "irradiancia": 800
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "chromium",
+      "simulador": "comp",
+      "cenario": "inicial-min",
+      "entrada": {
+        "volume": 10000,
+        "inicial": 5,
+        "alvo": 28,
+        "tarifa": 0.9,
+        "irradiancia": 800
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "chromium",
+      "simulador": "comp",
+      "cenario": "inicial-max",
+      "entrada": {
+        "volume": 10000,
+        "inicial": 40,
+        "alvo": 28,
+        "tarifa": 0.9,
+        "irradiancia": 800
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "chromium",
+      "simulador": "comp",
+      "cenario": "alvo-min",
+      "entrada": {
+        "volume": 10000,
+        "inicial": 22,
+        "alvo": 5,
+        "tarifa": 0.9,
+        "irradiancia": 800
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "chromium",
+      "simulador": "comp",
+      "cenario": "alvo-max",
+      "entrada": {
+        "volume": 10000,
+        "inicial": 22,
+        "alvo": 40,
+        "tarifa": 0.9,
+        "irradiancia": 800
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "chromium",
+      "simulador": "comp",
+      "cenario": "tarifa-min",
+      "entrada": {
+        "volume": 10000,
+        "inicial": 22,
+        "alvo": 28,
+        "tarifa": 0,
+        "irradiancia": 800
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "chromium",
+      "simulador": "comp",
+      "cenario": "tarifa-max",
+      "entrada": {
+        "volume": 10000,
+        "inicial": 22,
+        "alvo": 28,
+        "tarifa": 10,
+        "irradiancia": 800
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "chromium",
+      "simulador": "comp",
+      "cenario": "irradiancia-min",
+      "entrada": {
+        "volume": 10000,
+        "inicial": 22,
+        "alvo": 28,
+        "tarifa": 0.9,
+        "irradiancia": 0
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "chromium",
+      "simulador": "comp",
+      "cenario": "irradiancia-max",
+      "entrada": {
+        "volume": 10000,
+        "inicial": 22,
+        "alvo": 28,
+        "tarifa": 0.9,
+        "irradiancia": 1200
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "chromium",
+      "simulador": "comp",
+      "cenario": "todos-min",
+      "entrada": {
+        "volume": 1000,
+        "inicial": 5,
+        "alvo": 5,
+        "tarifa": 0,
+        "irradiancia": 0
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "chromium",
+      "simulador": "comp",
+      "cenario": "todos-max",
+      "entrada": {
+        "volume": 100000,
+        "inicial": 40,
+        "alvo": 40,
+        "tarifa": 10,
+        "irradiancia": 1200
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "firefox",
+      "simulador": "calor",
+      "cenario": "referência",
+      "entrada": {
+        "volume": 10000,
+        "area": 12,
+        "inicial": 22,
+        "alvo": 28,
+        "irradiancia": 800,
+        "eficiencia": 65,
+        "perdas": 15
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "firefox",
+      "simulador": "calor",
+      "cenario": "volume-min",
+      "entrada": {
+        "volume": 1000,
+        "area": 12,
+        "inicial": 22,
+        "alvo": 28,
+        "irradiancia": 800,
+        "eficiencia": 65,
+        "perdas": 15
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "firefox",
+      "simulador": "calor",
+      "cenario": "volume-max",
+      "entrada": {
+        "volume": 100000,
+        "area": 12,
+        "inicial": 22,
+        "alvo": 28,
+        "irradiancia": 800,
+        "eficiencia": 65,
+        "perdas": 15
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "firefox",
+      "simulador": "calor",
+      "cenario": "area-min",
+      "entrada": {
+        "volume": 10000,
+        "area": 1,
+        "inicial": 22,
+        "alvo": 28,
+        "irradiancia": 800,
+        "eficiencia": 65,
+        "perdas": 15
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "firefox",
+      "simulador": "calor",
+      "cenario": "area-max",
+      "entrada": {
+        "volume": 10000,
+        "area": 100,
+        "inicial": 22,
+        "alvo": 28,
+        "irradiancia": 800,
+        "eficiencia": 65,
+        "perdas": 15
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "firefox",
+      "simulador": "calor",
+      "cenario": "inicial-min",
+      "entrada": {
+        "volume": 10000,
+        "area": 12,
+        "inicial": 5,
+        "alvo": 28,
+        "irradiancia": 800,
+        "eficiencia": 65,
+        "perdas": 15
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "firefox",
+      "simulador": "calor",
+      "cenario": "inicial-max",
+      "entrada": {
+        "volume": 10000,
+        "area": 12,
+        "inicial": 40,
+        "alvo": 28,
+        "irradiancia": 800,
+        "eficiencia": 65,
+        "perdas": 15
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "firefox",
+      "simulador": "calor",
+      "cenario": "alvo-min",
+      "entrada": {
+        "volume": 10000,
+        "area": 12,
+        "inicial": 22,
+        "alvo": 5,
+        "irradiancia": 800,
+        "eficiencia": 65,
+        "perdas": 15
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "firefox",
+      "simulador": "calor",
+      "cenario": "alvo-max",
+      "entrada": {
+        "volume": 10000,
+        "area": 12,
+        "inicial": 22,
+        "alvo": 40,
+        "irradiancia": 800,
+        "eficiencia": 65,
+        "perdas": 15
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "firefox",
+      "simulador": "calor",
+      "cenario": "irradiancia-min",
+      "entrada": {
+        "volume": 10000,
+        "area": 12,
+        "inicial": 22,
+        "alvo": 28,
+        "irradiancia": 0,
+        "eficiencia": 65,
+        "perdas": 15
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "firefox",
+      "simulador": "calor",
+      "cenario": "irradiancia-max",
+      "entrada": {
+        "volume": 10000,
+        "area": 12,
+        "inicial": 22,
+        "alvo": 28,
+        "irradiancia": 1200,
+        "eficiencia": 65,
+        "perdas": 15
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "firefox",
+      "simulador": "calor",
+      "cenario": "eficiencia-min",
+      "entrada": {
+        "volume": 10000,
+        "area": 12,
+        "inicial": 22,
+        "alvo": 28,
+        "irradiancia": 800,
+        "eficiencia": 10,
+        "perdas": 15
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "firefox",
+      "simulador": "calor",
+      "cenario": "eficiencia-max",
+      "entrada": {
+        "volume": 10000,
+        "area": 12,
+        "inicial": 22,
+        "alvo": 28,
+        "irradiancia": 800,
+        "eficiencia": 95,
+        "perdas": 15
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "firefox",
+      "simulador": "calor",
+      "cenario": "perdas-min",
+      "entrada": {
+        "volume": 10000,
+        "area": 12,
+        "inicial": 22,
+        "alvo": 28,
+        "irradiancia": 800,
+        "eficiencia": 65,
+        "perdas": 0
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "firefox",
+      "simulador": "calor",
+      "cenario": "perdas-max",
+      "entrada": {
+        "volume": 10000,
+        "area": 12,
+        "inicial": 22,
+        "alvo": 28,
+        "irradiancia": 800,
+        "eficiencia": 65,
+        "perdas": 60
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "firefox",
+      "simulador": "calor",
+      "cenario": "todos-min",
+      "entrada": {
+        "volume": 1000,
+        "area": 1,
+        "inicial": 5,
+        "alvo": 5,
+        "irradiancia": 0,
+        "eficiencia": 10,
+        "perdas": 0
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "firefox",
+      "simulador": "calor",
+      "cenario": "todos-max",
+      "entrada": {
+        "volume": 100000,
+        "area": 100,
+        "inicial": 40,
+        "alvo": 40,
+        "irradiancia": 1200,
+        "eficiencia": 95,
+        "perdas": 60
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "firefox",
+      "simulador": "calor",
+      "cenario": "aquecimento muito lento",
+      "entrada": {
+        "volume": 100000,
+        "area": 1,
+        "inicial": 5,
+        "alvo": 40,
+        "irradiancia": 50,
+        "eficiencia": 10,
+        "perdas": 60
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "firefox",
+      "simulador": "agua",
+      "cenario": "referência",
+      "entrada": {
+        "area": 32,
+        "evaporacao": 5,
+        "dias": 30,
+        "reducao": 80,
+        "horasCoberta": 16
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "firefox",
+      "simulador": "agua",
+      "cenario": "area-min",
+      "entrada": {
+        "area": 1,
+        "evaporacao": 5,
+        "dias": 30,
+        "reducao": 80,
+        "horasCoberta": 16
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "firefox",
+      "simulador": "agua",
+      "cenario": "area-max",
+      "entrada": {
+        "area": 500,
+        "evaporacao": 5,
+        "dias": 30,
+        "reducao": 80,
+        "horasCoberta": 16
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "firefox",
+      "simulador": "agua",
+      "cenario": "evaporacao-min",
+      "entrada": {
+        "area": 32,
+        "evaporacao": 0,
+        "dias": 30,
+        "reducao": 80,
+        "horasCoberta": 16
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "firefox",
+      "simulador": "agua",
+      "cenario": "evaporacao-max",
+      "entrada": {
+        "area": 32,
+        "evaporacao": 15,
+        "dias": 30,
+        "reducao": 80,
+        "horasCoberta": 16
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "firefox",
+      "simulador": "agua",
+      "cenario": "dias-min",
+      "entrada": {
+        "area": 32,
+        "evaporacao": 5,
+        "dias": 1,
+        "reducao": 80,
+        "horasCoberta": 16
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "firefox",
+      "simulador": "agua",
+      "cenario": "dias-max",
+      "entrada": {
+        "area": 32,
+        "evaporacao": 5,
+        "dias": 365,
+        "reducao": 80,
+        "horasCoberta": 16
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "firefox",
+      "simulador": "agua",
+      "cenario": "reducao-min",
+      "entrada": {
+        "area": 32,
+        "evaporacao": 5,
+        "dias": 30,
+        "reducao": 0,
+        "horasCoberta": 16
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "firefox",
+      "simulador": "agua",
+      "cenario": "reducao-max",
+      "entrada": {
+        "area": 32,
+        "evaporacao": 5,
+        "dias": 30,
+        "reducao": 95,
+        "horasCoberta": 16
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "firefox",
+      "simulador": "agua",
+      "cenario": "horasCoberta-min",
+      "entrada": {
+        "area": 32,
+        "evaporacao": 5,
+        "dias": 30,
+        "reducao": 80,
+        "horasCoberta": 0
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "firefox",
+      "simulador": "agua",
+      "cenario": "horasCoberta-max",
+      "entrada": {
+        "area": 32,
+        "evaporacao": 5,
+        "dias": 30,
+        "reducao": 80,
+        "horasCoberta": 24
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "firefox",
+      "simulador": "agua",
+      "cenario": "todos-min",
+      "entrada": {
+        "area": 1,
+        "evaporacao": 0,
+        "dias": 1,
+        "reducao": 0,
+        "horasCoberta": 0
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "firefox",
+      "simulador": "agua",
+      "cenario": "todos-max",
+      "entrada": {
+        "area": 500,
+        "evaporacao": 15,
+        "dias": 365,
+        "reducao": 95,
+        "horasCoberta": 24
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "firefox",
+      "simulador": "comp",
+      "cenario": "referência",
+      "entrada": {
+        "volume": 10000,
+        "inicial": 22,
+        "alvo": 28,
+        "tarifa": 0.9,
+        "irradiancia": 800
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "firefox",
+      "simulador": "comp",
+      "cenario": "volume-min",
+      "entrada": {
+        "volume": 1000,
+        "inicial": 22,
+        "alvo": 28,
+        "tarifa": 0.9,
+        "irradiancia": 800
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "firefox",
+      "simulador": "comp",
+      "cenario": "volume-max",
+      "entrada": {
+        "volume": 100000,
+        "inicial": 22,
+        "alvo": 28,
+        "tarifa": 0.9,
+        "irradiancia": 800
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "firefox",
+      "simulador": "comp",
+      "cenario": "inicial-min",
+      "entrada": {
+        "volume": 10000,
+        "inicial": 5,
+        "alvo": 28,
+        "tarifa": 0.9,
+        "irradiancia": 800
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "firefox",
+      "simulador": "comp",
+      "cenario": "inicial-max",
+      "entrada": {
+        "volume": 10000,
+        "inicial": 40,
+        "alvo": 28,
+        "tarifa": 0.9,
+        "irradiancia": 800
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "firefox",
+      "simulador": "comp",
+      "cenario": "alvo-min",
+      "entrada": {
+        "volume": 10000,
+        "inicial": 22,
+        "alvo": 5,
+        "tarifa": 0.9,
+        "irradiancia": 800
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "firefox",
+      "simulador": "comp",
+      "cenario": "alvo-max",
+      "entrada": {
+        "volume": 10000,
+        "inicial": 22,
+        "alvo": 40,
+        "tarifa": 0.9,
+        "irradiancia": 800
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "firefox",
+      "simulador": "comp",
+      "cenario": "tarifa-min",
+      "entrada": {
+        "volume": 10000,
+        "inicial": 22,
+        "alvo": 28,
+        "tarifa": 0,
+        "irradiancia": 800
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "firefox",
+      "simulador": "comp",
+      "cenario": "tarifa-max",
+      "entrada": {
+        "volume": 10000,
+        "inicial": 22,
+        "alvo": 28,
+        "tarifa": 10,
+        "irradiancia": 800
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "firefox",
+      "simulador": "comp",
+      "cenario": "irradiancia-min",
+      "entrada": {
+        "volume": 10000,
+        "inicial": 22,
+        "alvo": 28,
+        "tarifa": 0.9,
+        "irradiancia": 0
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "firefox",
+      "simulador": "comp",
+      "cenario": "irradiancia-max",
+      "entrada": {
+        "volume": 10000,
+        "inicial": 22,
+        "alvo": 28,
+        "tarifa": 0.9,
+        "irradiancia": 1200
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "firefox",
+      "simulador": "comp",
+      "cenario": "todos-min",
+      "entrada": {
+        "volume": 1000,
+        "inicial": 5,
+        "alvo": 5,
+        "tarifa": 0,
+        "irradiancia": 0
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "firefox",
+      "simulador": "comp",
+      "cenario": "todos-max",
+      "entrada": {
+        "volume": 100000,
+        "inicial": 40,
+        "alvo": 40,
+        "tarifa": 10,
+        "irradiancia": 1200
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "webkit",
+      "simulador": "calor",
+      "cenario": "referência",
+      "entrada": {
+        "volume": 10000,
+        "area": 12,
+        "inicial": 22,
+        "alvo": 28,
+        "irradiancia": 800,
+        "eficiencia": 65,
+        "perdas": 15
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "webkit",
+      "simulador": "calor",
+      "cenario": "volume-min",
+      "entrada": {
+        "volume": 1000,
+        "area": 12,
+        "inicial": 22,
+        "alvo": 28,
+        "irradiancia": 800,
+        "eficiencia": 65,
+        "perdas": 15
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "webkit",
+      "simulador": "calor",
+      "cenario": "volume-max",
+      "entrada": {
+        "volume": 100000,
+        "area": 12,
+        "inicial": 22,
+        "alvo": 28,
+        "irradiancia": 800,
+        "eficiencia": 65,
+        "perdas": 15
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "webkit",
+      "simulador": "calor",
+      "cenario": "area-min",
+      "entrada": {
+        "volume": 10000,
+        "area": 1,
+        "inicial": 22,
+        "alvo": 28,
+        "irradiancia": 800,
+        "eficiencia": 65,
+        "perdas": 15
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "webkit",
+      "simulador": "calor",
+      "cenario": "area-max",
+      "entrada": {
+        "volume": 10000,
+        "area": 100,
+        "inicial": 22,
+        "alvo": 28,
+        "irradiancia": 800,
+        "eficiencia": 65,
+        "perdas": 15
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "webkit",
+      "simulador": "calor",
+      "cenario": "inicial-min",
+      "entrada": {
+        "volume": 10000,
+        "area": 12,
+        "inicial": 5,
+        "alvo": 28,
+        "irradiancia": 800,
+        "eficiencia": 65,
+        "perdas": 15
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "webkit",
+      "simulador": "calor",
+      "cenario": "inicial-max",
+      "entrada": {
+        "volume": 10000,
+        "area": 12,
+        "inicial": 40,
+        "alvo": 28,
+        "irradiancia": 800,
+        "eficiencia": 65,
+        "perdas": 15
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "webkit",
+      "simulador": "calor",
+      "cenario": "alvo-min",
+      "entrada": {
+        "volume": 10000,
+        "area": 12,
+        "inicial": 22,
+        "alvo": 5,
+        "irradiancia": 800,
+        "eficiencia": 65,
+        "perdas": 15
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "webkit",
+      "simulador": "calor",
+      "cenario": "alvo-max",
+      "entrada": {
+        "volume": 10000,
+        "area": 12,
+        "inicial": 22,
+        "alvo": 40,
+        "irradiancia": 800,
+        "eficiencia": 65,
+        "perdas": 15
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "webkit",
+      "simulador": "calor",
+      "cenario": "irradiancia-min",
+      "entrada": {
+        "volume": 10000,
+        "area": 12,
+        "inicial": 22,
+        "alvo": 28,
+        "irradiancia": 0,
+        "eficiencia": 65,
+        "perdas": 15
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "webkit",
+      "simulador": "calor",
+      "cenario": "irradiancia-max",
+      "entrada": {
+        "volume": 10000,
+        "area": 12,
+        "inicial": 22,
+        "alvo": 28,
+        "irradiancia": 1200,
+        "eficiencia": 65,
+        "perdas": 15
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "webkit",
+      "simulador": "calor",
+      "cenario": "eficiencia-min",
+      "entrada": {
+        "volume": 10000,
+        "area": 12,
+        "inicial": 22,
+        "alvo": 28,
+        "irradiancia": 800,
+        "eficiencia": 10,
+        "perdas": 15
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "webkit",
+      "simulador": "calor",
+      "cenario": "eficiencia-max",
+      "entrada": {
+        "volume": 10000,
+        "area": 12,
+        "inicial": 22,
+        "alvo": 28,
+        "irradiancia": 800,
+        "eficiencia": 95,
+        "perdas": 15
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "webkit",
+      "simulador": "calor",
+      "cenario": "perdas-min",
+      "entrada": {
+        "volume": 10000,
+        "area": 12,
+        "inicial": 22,
+        "alvo": 28,
+        "irradiancia": 800,
+        "eficiencia": 65,
+        "perdas": 0
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "webkit",
+      "simulador": "calor",
+      "cenario": "perdas-max",
+      "entrada": {
+        "volume": 10000,
+        "area": 12,
+        "inicial": 22,
+        "alvo": 28,
+        "irradiancia": 800,
+        "eficiencia": 65,
+        "perdas": 60
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "webkit",
+      "simulador": "calor",
+      "cenario": "todos-min",
+      "entrada": {
+        "volume": 1000,
+        "area": 1,
+        "inicial": 5,
+        "alvo": 5,
+        "irradiancia": 0,
+        "eficiencia": 10,
+        "perdas": 0
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "webkit",
+      "simulador": "calor",
+      "cenario": "todos-max",
+      "entrada": {
+        "volume": 100000,
+        "area": 100,
+        "inicial": 40,
+        "alvo": 40,
+        "irradiancia": 1200,
+        "eficiencia": 95,
+        "perdas": 60
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "webkit",
+      "simulador": "calor",
+      "cenario": "aquecimento muito lento",
+      "entrada": {
+        "volume": 100000,
+        "area": 1,
+        "inicial": 5,
+        "alvo": 40,
+        "irradiancia": 50,
+        "eficiencia": 10,
+        "perdas": 60
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "webkit",
+      "simulador": "agua",
+      "cenario": "referência",
+      "entrada": {
+        "area": 32,
+        "evaporacao": 5,
+        "dias": 30,
+        "reducao": 80,
+        "horasCoberta": 16
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "webkit",
+      "simulador": "agua",
+      "cenario": "area-min",
+      "entrada": {
+        "area": 1,
+        "evaporacao": 5,
+        "dias": 30,
+        "reducao": 80,
+        "horasCoberta": 16
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "webkit",
+      "simulador": "agua",
+      "cenario": "area-max",
+      "entrada": {
+        "area": 500,
+        "evaporacao": 5,
+        "dias": 30,
+        "reducao": 80,
+        "horasCoberta": 16
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "webkit",
+      "simulador": "agua",
+      "cenario": "evaporacao-min",
+      "entrada": {
+        "area": 32,
+        "evaporacao": 0,
+        "dias": 30,
+        "reducao": 80,
+        "horasCoberta": 16
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "webkit",
+      "simulador": "agua",
+      "cenario": "evaporacao-max",
+      "entrada": {
+        "area": 32,
+        "evaporacao": 15,
+        "dias": 30,
+        "reducao": 80,
+        "horasCoberta": 16
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "webkit",
+      "simulador": "agua",
+      "cenario": "dias-min",
+      "entrada": {
+        "area": 32,
+        "evaporacao": 5,
+        "dias": 1,
+        "reducao": 80,
+        "horasCoberta": 16
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "webkit",
+      "simulador": "agua",
+      "cenario": "dias-max",
+      "entrada": {
+        "area": 32,
+        "evaporacao": 5,
+        "dias": 365,
+        "reducao": 80,
+        "horasCoberta": 16
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "webkit",
+      "simulador": "agua",
+      "cenario": "reducao-min",
+      "entrada": {
+        "area": 32,
+        "evaporacao": 5,
+        "dias": 30,
+        "reducao": 0,
+        "horasCoberta": 16
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "webkit",
+      "simulador": "agua",
+      "cenario": "reducao-max",
+      "entrada": {
+        "area": 32,
+        "evaporacao": 5,
+        "dias": 30,
+        "reducao": 95,
+        "horasCoberta": 16
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "webkit",
+      "simulador": "agua",
+      "cenario": "horasCoberta-min",
+      "entrada": {
+        "area": 32,
+        "evaporacao": 5,
+        "dias": 30,
+        "reducao": 80,
+        "horasCoberta": 0
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "webkit",
+      "simulador": "agua",
+      "cenario": "horasCoberta-max",
+      "entrada": {
+        "area": 32,
+        "evaporacao": 5,
+        "dias": 30,
+        "reducao": 80,
+        "horasCoberta": 24
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "webkit",
+      "simulador": "agua",
+      "cenario": "todos-min",
+      "entrada": {
+        "area": 1,
+        "evaporacao": 0,
+        "dias": 1,
+        "reducao": 0,
+        "horasCoberta": 0
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "webkit",
+      "simulador": "agua",
+      "cenario": "todos-max",
+      "entrada": {
+        "area": 500,
+        "evaporacao": 15,
+        "dias": 365,
+        "reducao": 95,
+        "horasCoberta": 24
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "webkit",
+      "simulador": "comp",
+      "cenario": "referência",
+      "entrada": {
+        "volume": 10000,
+        "inicial": 22,
+        "alvo": 28,
+        "tarifa": 0.9,
+        "irradiancia": 800
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "webkit",
+      "simulador": "comp",
+      "cenario": "volume-min",
+      "entrada": {
+        "volume": 1000,
+        "inicial": 22,
+        "alvo": 28,
+        "tarifa": 0.9,
+        "irradiancia": 800
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "webkit",
+      "simulador": "comp",
+      "cenario": "volume-max",
+      "entrada": {
+        "volume": 100000,
+        "inicial": 22,
+        "alvo": 28,
+        "tarifa": 0.9,
+        "irradiancia": 800
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "webkit",
+      "simulador": "comp",
+      "cenario": "inicial-min",
+      "entrada": {
+        "volume": 10000,
+        "inicial": 5,
+        "alvo": 28,
+        "tarifa": 0.9,
+        "irradiancia": 800
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "webkit",
+      "simulador": "comp",
+      "cenario": "inicial-max",
+      "entrada": {
+        "volume": 10000,
+        "inicial": 40,
+        "alvo": 28,
+        "tarifa": 0.9,
+        "irradiancia": 800
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "webkit",
+      "simulador": "comp",
+      "cenario": "alvo-min",
+      "entrada": {
+        "volume": 10000,
+        "inicial": 22,
+        "alvo": 5,
+        "tarifa": 0.9,
+        "irradiancia": 800
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "webkit",
+      "simulador": "comp",
+      "cenario": "alvo-max",
+      "entrada": {
+        "volume": 10000,
+        "inicial": 22,
+        "alvo": 40,
+        "tarifa": 0.9,
+        "irradiancia": 800
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "webkit",
+      "simulador": "comp",
+      "cenario": "tarifa-min",
+      "entrada": {
+        "volume": 10000,
+        "inicial": 22,
+        "alvo": 28,
+        "tarifa": 0,
+        "irradiancia": 800
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "webkit",
+      "simulador": "comp",
+      "cenario": "tarifa-max",
+      "entrada": {
+        "volume": 10000,
+        "inicial": 22,
+        "alvo": 28,
+        "tarifa": 10,
+        "irradiancia": 800
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "webkit",
+      "simulador": "comp",
+      "cenario": "irradiancia-min",
+      "entrada": {
+        "volume": 10000,
+        "inicial": 22,
+        "alvo": 28,
+        "tarifa": 0.9,
+        "irradiancia": 0
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "webkit",
+      "simulador": "comp",
+      "cenario": "irradiancia-max",
+      "entrada": {
+        "volume": 10000,
+        "inicial": 22,
+        "alvo": 28,
+        "tarifa": 0.9,
+        "irradiancia": 1200
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "webkit",
+      "simulador": "comp",
+      "cenario": "todos-min",
+      "entrada": {
+        "volume": 1000,
+        "inicial": 5,
+        "alvo": 5,
+        "tarifa": 0,
+        "irradiancia": 0
+      },
+      "aprovado": true
+    },
+    {
+      "navegador": "webkit",
+      "simulador": "comp",
+      "cenario": "todos-max",
+      "entrada": {
+        "volume": 100000,
+        "inicial": 40,
+        "alvo": 40,
+        "tarifa": 10,
+        "irradiancia": 1200
+      },
+      "aprovado": true
+    }
+  ],
+  "responsividade": [
+    {
+      "navegador": "chromium",
+      "perfil": "padrão",
+      "largura": 320,
+      "painel": "calor",
+      "overflow": false
+    },
+    {
+      "navegador": "chromium",
+      "perfil": "padrão",
+      "largura": 320,
+      "painel": "agua",
+      "overflow": false
+    },
+    {
+      "navegador": "chromium",
+      "perfil": "padrão",
+      "largura": 320,
+      "painel": "automacao",
+      "overflow": false
+    },
+    {
+      "navegador": "chromium",
+      "perfil": "padrão",
+      "largura": 320,
+      "painel": "comp",
+      "overflow": false
+    },
+    {
+      "navegador": "chromium",
+      "perfil": "padrão",
+      "largura": 390,
+      "painel": "calor",
+      "overflow": false
+    },
+    {
+      "navegador": "chromium",
+      "perfil": "padrão",
+      "largura": 390,
+      "painel": "agua",
+      "overflow": false
+    },
+    {
+      "navegador": "chromium",
+      "perfil": "padrão",
+      "largura": 390,
+      "painel": "automacao",
+      "overflow": false
+    },
+    {
+      "navegador": "chromium",
+      "perfil": "padrão",
+      "largura": 390,
+      "painel": "comp",
+      "overflow": false
+    },
+    {
+      "navegador": "chromium",
+      "perfil": "padrão",
+      "largura": 768,
+      "painel": "calor",
+      "overflow": false
+    },
+    {
+      "navegador": "chromium",
+      "perfil": "padrão",
+      "largura": 768,
+      "painel": "agua",
+      "overflow": false
+    },
+    {
+      "navegador": "chromium",
+      "perfil": "padrão",
+      "largura": 768,
+      "painel": "automacao",
+      "overflow": false
+    },
+    {
+      "navegador": "chromium",
+      "perfil": "padrão",
+      "largura": 768,
+      "painel": "comp",
+      "overflow": false
+    },
+    {
+      "navegador": "chromium",
+      "perfil": "padrão",
+      "largura": 1024,
+      "painel": "calor",
+      "overflow": false
+    },
+    {
+      "navegador": "chromium",
+      "perfil": "padrão",
+      "largura": 1024,
+      "painel": "agua",
+      "overflow": false
+    },
+    {
+      "navegador": "chromium",
+      "perfil": "padrão",
+      "largura": 1024,
+      "painel": "automacao",
+      "overflow": false
+    },
+    {
+      "navegador": "chromium",
+      "perfil": "padrão",
+      "largura": 1024,
+      "painel": "comp",
+      "overflow": false
+    },
+    {
+      "navegador": "chromium",
+      "perfil": "padrão",
+      "largura": 1440,
+      "painel": "calor",
+      "overflow": false
+    },
+    {
+      "navegador": "chromium",
+      "perfil": "padrão",
+      "largura": 1440,
+      "painel": "agua",
+      "overflow": false
+    },
+    {
+      "navegador": "chromium",
+      "perfil": "padrão",
+      "largura": 1440,
+      "painel": "automacao",
+      "overflow": false
+    },
+    {
+      "navegador": "chromium",
+      "perfil": "padrão",
+      "largura": 1440,
+      "painel": "comp",
+      "overflow": false
+    },
+    {
+      "navegador": "chromium",
+      "perfil": "combinado200",
+      "largura": 320,
+      "painel": "calor",
+      "overflow": false
+    },
+    {
+      "navegador": "chromium",
+      "perfil": "combinado200",
+      "largura": 320,
+      "painel": "agua",
+      "overflow": false
+    },
+    {
+      "navegador": "chromium",
+      "perfil": "combinado200",
+      "largura": 320,
+      "painel": "automacao",
+      "overflow": false
+    },
+    {
+      "navegador": "chromium",
+      "perfil": "combinado200",
+      "largura": 320,
+      "painel": "comp",
+      "overflow": false
+    },
+    {
+      "navegador": "chromium",
+      "perfil": "combinado200",
+      "largura": 390,
+      "painel": "calor",
+      "overflow": false
+    },
+    {
+      "navegador": "chromium",
+      "perfil": "combinado200",
+      "largura": 390,
+      "painel": "agua",
+      "overflow": false
+    },
+    {
+      "navegador": "chromium",
+      "perfil": "combinado200",
+      "largura": 390,
+      "painel": "automacao",
+      "overflow": false
+    },
+    {
+      "navegador": "chromium",
+      "perfil": "combinado200",
+      "largura": 390,
+      "painel": "comp",
+      "overflow": false
+    },
+    {
+      "navegador": "chromium",
+      "perfil": "combinado200",
+      "largura": 768,
+      "painel": "calor",
+      "overflow": false
+    },
+    {
+      "navegador": "chromium",
+      "perfil": "combinado200",
+      "largura": 768,
+      "painel": "agua",
+      "overflow": false
+    },
+    {
+      "navegador": "chromium",
+      "perfil": "combinado200",
+      "largura": 768,
+      "painel": "automacao",
+      "overflow": false
+    },
+    {
+      "navegador": "chromium",
+      "perfil": "combinado200",
+      "largura": 768,
+      "painel": "comp",
+      "overflow": false
+    },
+    {
+      "navegador": "chromium",
+      "perfil": "combinado200",
+      "largura": 1024,
+      "painel": "calor",
+      "overflow": false
+    },
+    {
+      "navegador": "chromium",
+      "perfil": "combinado200",
+      "largura": 1024,
+      "painel": "agua",
+      "overflow": false
+    },
+    {
+      "navegador": "chromium",
+      "perfil": "combinado200",
+      "largura": 1024,
+      "painel": "automacao",
+      "overflow": false
+    },
+    {
+      "navegador": "chromium",
+      "perfil": "combinado200",
+      "largura": 1024,
+      "painel": "comp",
+      "overflow": false
+    },
+    {
+      "navegador": "chromium",
+      "perfil": "combinado200",
+      "largura": 1440,
+      "painel": "calor",
+      "overflow": false
+    },
+    {
+      "navegador": "chromium",
+      "perfil": "combinado200",
+      "largura": 1440,
+      "painel": "agua",
+      "overflow": false
+    },
+    {
+      "navegador": "chromium",
+      "perfil": "combinado200",
+      "largura": 1440,
+      "painel": "automacao",
+      "overflow": false
+    },
+    {
+      "navegador": "chromium",
+      "perfil": "combinado200",
+      "largura": 1440,
+      "painel": "comp",
+      "overflow": false
+    },
+    {
+      "navegador": "firefox",
+      "perfil": "padrão",
+      "largura": 320,
+      "painel": "calor",
+      "overflow": false
+    },
+    {
+      "navegador": "firefox",
+      "perfil": "padrão",
+      "largura": 320,
+      "painel": "agua",
+      "overflow": false
+    },
+    {
+      "navegador": "firefox",
+      "perfil": "padrão",
+      "largura": 320,
+      "painel": "automacao",
+      "overflow": false
+    },
+    {
+      "navegador": "firefox",
+      "perfil": "padrão",
+      "largura": 320,
+      "painel": "comp",
+      "overflow": false
+    },
+    {
+      "navegador": "firefox",
+      "perfil": "padrão",
+      "largura": 390,
+      "painel": "calor",
+      "overflow": false
+    },
+    {
+      "navegador": "firefox",
+      "perfil": "padrão",
+      "largura": 390,
+      "painel": "agua",
+      "overflow": false
+    },
+    {
+      "navegador": "firefox",
+      "perfil": "padrão",
+      "largura": 390,
+      "painel": "automacao",
+      "overflow": false
+    },
+    {
+      "navegador": "firefox",
+      "perfil": "padrão",
+      "largura": 390,
+      "painel": "comp",
+      "overflow": false
+    },
+    {
+      "navegador": "firefox",
+      "perfil": "padrão",
+      "largura": 768,
+      "painel": "calor",
+      "overflow": false
+    },
+    {
+      "navegador": "firefox",
+      "perfil": "padrão",
+      "largura": 768,
+      "painel": "agua",
+      "overflow": false
+    },
+    {
+      "navegador": "firefox",
+      "perfil": "padrão",
+      "largura": 768,
+      "painel": "automacao",
+      "overflow": false
+    },
+    {
+      "navegador": "firefox",
+      "perfil": "padrão",
+      "largura": 768,
+      "painel": "comp",
+      "overflow": false
+    },
+    {
+      "navegador": "firefox",
+      "perfil": "padrão",
+      "largura": 1024,
+      "painel": "calor",
+      "overflow": false
+    },
+    {
+      "navegador": "firefox",
+      "perfil": "padrão",
+      "largura": 1024,
+      "painel": "agua",
+      "overflow": false
+    },
+    {
+      "navegador": "firefox",
+      "perfil": "padrão",
+      "largura": 1024,
+      "painel": "automacao",
+      "overflow": false
+    },
+    {
+      "navegador": "firefox",
+      "perfil": "padrão",
+      "largura": 1024,
+      "painel": "comp",
+      "overflow": false
+    },
+    {
+      "navegador": "firefox",
+      "perfil": "padrão",
+      "largura": 1440,
+      "painel": "calor",
+      "overflow": false
+    },
+    {
+      "navegador": "firefox",
+      "perfil": "padrão",
+      "largura": 1440,
+      "painel": "agua",
+      "overflow": false
+    },
+    {
+      "navegador": "firefox",
+      "perfil": "padrão",
+      "largura": 1440,
+      "painel": "automacao",
+      "overflow": false
+    },
+    {
+      "navegador": "firefox",
+      "perfil": "padrão",
+      "largura": 1440,
+      "painel": "comp",
+      "overflow": false
+    },
+    {
+      "navegador": "firefox",
+      "perfil": "combinado200",
+      "largura": 320,
+      "painel": "calor",
+      "overflow": false
+    },
+    {
+      "navegador": "firefox",
+      "perfil": "combinado200",
+      "largura": 320,
+      "painel": "agua",
+      "overflow": false
+    },
+    {
+      "navegador": "firefox",
+      "perfil": "combinado200",
+      "largura": 320,
+      "painel": "automacao",
+      "overflow": false
+    },
+    {
+      "navegador": "firefox",
+      "perfil": "combinado200",
+      "largura": 320,
+      "painel": "comp",
+      "overflow": false
+    },
+    {
+      "navegador": "firefox",
+      "perfil": "combinado200",
+      "largura": 390,
+      "painel": "calor",
+      "overflow": false
+    },
+    {
+      "navegador": "firefox",
+      "perfil": "combinado200",
+      "largura": 390,
+      "painel": "agua",
+      "overflow": false
+    },
+    {
+      "navegador": "firefox",
+      "perfil": "combinado200",
+      "largura": 390,
+      "painel": "automacao",
+      "overflow": false
+    },
+    {
+      "navegador": "firefox",
+      "perfil": "combinado200",
+      "largura": 390,
+      "painel": "comp",
+      "overflow": false
+    },
+    {
+      "navegador": "firefox",
+      "perfil": "combinado200",
+      "largura": 768,
+      "painel": "calor",
+      "overflow": false
+    },
+    {
+      "navegador": "firefox",
+      "perfil": "combinado200",
+      "largura": 768,
+      "painel": "agua",
+      "overflow": false
+    },
+    {
+      "navegador": "firefox",
+      "perfil": "combinado200",
+      "largura": 768,
+      "painel": "automacao",
+      "overflow": false
+    },
+    {
+      "navegador": "firefox",
+      "perfil": "combinado200",
+      "largura": 768,
+      "painel": "comp",
+      "overflow": false
+    },
+    {
+      "navegador": "firefox",
+      "perfil": "combinado200",
+      "largura": 1024,
+      "painel": "calor",
+      "overflow": false
+    },
+    {
+      "navegador": "firefox",
+      "perfil": "combinado200",
+      "largura": 1024,
+      "painel": "agua",
+      "overflow": false
+    },
+    {
+      "navegador": "firefox",
+      "perfil": "combinado200",
+      "largura": 1024,
+      "painel": "automacao",
+      "overflow": false
+    },
+    {
+      "navegador": "firefox",
+      "perfil": "combinado200",
+      "largura": 1024,
+      "painel": "comp",
+      "overflow": false
+    },
+    {
+      "navegador": "firefox",
+      "perfil": "combinado200",
+      "largura": 1440,
+      "painel": "calor",
+      "overflow": false
+    },
+    {
+      "navegador": "firefox",
+      "perfil": "combinado200",
+      "largura": 1440,
+      "painel": "agua",
+      "overflow": false
+    },
+    {
+      "navegador": "firefox",
+      "perfil": "combinado200",
+      "largura": 1440,
+      "painel": "automacao",
+      "overflow": false
+    },
+    {
+      "navegador": "firefox",
+      "perfil": "combinado200",
+      "largura": 1440,
+      "painel": "comp",
+      "overflow": false
+    },
+    {
+      "navegador": "webkit",
+      "perfil": "padrão",
+      "largura": 320,
+      "painel": "calor",
+      "overflow": false
+    },
+    {
+      "navegador": "webkit",
+      "perfil": "padrão",
+      "largura": 320,
+      "painel": "agua",
+      "overflow": false
+    },
+    {
+      "navegador": "webkit",
+      "perfil": "padrão",
+      "largura": 320,
+      "painel": "automacao",
+      "overflow": false
+    },
+    {
+      "navegador": "webkit",
+      "perfil": "padrão",
+      "largura": 320,
+      "painel": "comp",
+      "overflow": false
+    },
+    {
+      "navegador": "webkit",
+      "perfil": "padrão",
+      "largura": 390,
+      "painel": "calor",
+      "overflow": false
+    },
+    {
+      "navegador": "webkit",
+      "perfil": "padrão",
+      "largura": 390,
+      "painel": "agua",
+      "overflow": false
+    },
+    {
+      "navegador": "webkit",
+      "perfil": "padrão",
+      "largura": 390,
+      "painel": "automacao",
+      "overflow": false
+    },
+    {
+      "navegador": "webkit",
+      "perfil": "padrão",
+      "largura": 390,
+      "painel": "comp",
+      "overflow": false
+    },
+    {
+      "navegador": "webkit",
+      "perfil": "padrão",
+      "largura": 768,
+      "painel": "calor",
+      "overflow": false
+    },
+    {
+      "navegador": "webkit",
+      "perfil": "padrão",
+      "largura": 768,
+      "painel": "agua",
+      "overflow": false
+    },
+    {
+      "navegador": "webkit",
+      "perfil": "padrão",
+      "largura": 768,
+      "painel": "automacao",
+      "overflow": false
+    },
+    {
+      "navegador": "webkit",
+      "perfil": "padrão",
+      "largura": 768,
+      "painel": "comp",
+      "overflow": false
+    },
+    {
+      "navegador": "webkit",
+      "perfil": "padrão",
+      "largura": 1024,
+      "painel": "calor",
+      "overflow": false
+    },
+    {
+      "navegador": "webkit",
+      "perfil": "padrão",
+      "largura": 1024,
+      "painel": "agua",
+      "overflow": false
+    },
+    {
+      "navegador": "webkit",
+      "perfil": "padrão",
+      "largura": 1024,
+      "painel": "automacao",
+      "overflow": false
+    },
+    {
+      "navegador": "webkit",
+      "perfil": "padrão",
+      "largura": 1024,
+      "painel": "comp",
+      "overflow": false
+    },
+    {
+      "navegador": "webkit",
+      "perfil": "padrão",
+      "largura": 1440,
+      "painel": "calor",
+      "overflow": false
+    },
+    {
+      "navegador": "webkit",
+      "perfil": "padrão",
+      "largura": 1440,
+      "painel": "agua",
+      "overflow": false
+    },
+    {
+      "navegador": "webkit",
+      "perfil": "padrão",
+      "largura": 1440,
+      "painel": "automacao",
+      "overflow": false
+    },
+    {
+      "navegador": "webkit",
+      "perfil": "padrão",
+      "largura": 1440,
+      "painel": "comp",
+      "overflow": false
+    },
+    {
+      "navegador": "webkit",
+      "perfil": "combinado200",
+      "largura": 320,
+      "painel": "calor",
+      "overflow": false
+    },
+    {
+      "navegador": "webkit",
+      "perfil": "combinado200",
+      "largura": 320,
+      "painel": "agua",
+      "overflow": false
+    },
+    {
+      "navegador": "webkit",
+      "perfil": "combinado200",
+      "largura": 320,
+      "painel": "automacao",
+      "overflow": false
+    },
+    {
+      "navegador": "webkit",
+      "perfil": "combinado200",
+      "largura": 320,
+      "painel": "comp",
+      "overflow": false
+    },
+    {
+      "navegador": "webkit",
+      "perfil": "combinado200",
+      "largura": 390,
+      "painel": "calor",
+      "overflow": false
+    },
+    {
+      "navegador": "webkit",
+      "perfil": "combinado200",
+      "largura": 390,
+      "painel": "agua",
+      "overflow": false
+    },
+    {
+      "navegador": "webkit",
+      "perfil": "combinado200",
+      "largura": 390,
+      "painel": "automacao",
+      "overflow": false
+    },
+    {
+      "navegador": "webkit",
+      "perfil": "combinado200",
+      "largura": 390,
+      "painel": "comp",
+      "overflow": false
+    },
+    {
+      "navegador": "webkit",
+      "perfil": "combinado200",
+      "largura": 768,
+      "painel": "calor",
+      "overflow": false
+    },
+    {
+      "navegador": "webkit",
+      "perfil": "combinado200",
+      "largura": 768,
+      "painel": "agua",
+      "overflow": false
+    },
+    {
+      "navegador": "webkit",
+      "perfil": "combinado200",
+      "largura": 768,
+      "painel": "automacao",
+      "overflow": false
+    },
+    {
+      "navegador": "webkit",
+      "perfil": "combinado200",
+      "largura": 768,
+      "painel": "comp",
+      "overflow": false
+    },
+    {
+      "navegador": "webkit",
+      "perfil": "combinado200",
+      "largura": 1024,
+      "painel": "calor",
+      "overflow": false
+    },
+    {
+      "navegador": "webkit",
+      "perfil": "combinado200",
+      "largura": 1024,
+      "painel": "agua",
+      "overflow": false
+    },
+    {
+      "navegador": "webkit",
+      "perfil": "combinado200",
+      "largura": 1024,
+      "painel": "automacao",
+      "overflow": false
+    },
+    {
+      "navegador": "webkit",
+      "perfil": "combinado200",
+      "largura": 1024,
+      "painel": "comp",
+      "overflow": false
+    },
+    {
+      "navegador": "webkit",
+      "perfil": "combinado200",
+      "largura": 1440,
+      "painel": "calor",
+      "overflow": false
+    },
+    {
+      "navegador": "webkit",
+      "perfil": "combinado200",
+      "largura": 1440,
+      "painel": "agua",
+      "overflow": false
+    },
+    {
+      "navegador": "webkit",
+      "perfil": "combinado200",
+      "largura": 1440,
+      "painel": "automacao",
+      "overflow": false
+    },
+    {
+      "navegador": "webkit",
+      "perfil": "combinado200",
+      "largura": 1440,
+      "painel": "comp",
+      "overflow": false
+    }
+  ],
+  "axe": [
+    {
+      "tema": "normal",
+      "estado": "calor",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 10
+        }
+      ]
+    },
+    {
+      "tema": "normal",
+      "estado": "calor_extremo",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 10
+        }
+      ]
+    },
+    {
+      "tema": "normal",
+      "estado": "agua",
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "tema": "normal",
+      "estado": "automacao",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 6
+        }
+      ]
+    },
+    {
+      "tema": "normal",
+      "estado": "automacao_invalida",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 6
+        }
+      ]
+    },
+    {
+      "tema": "normal",
+      "estado": "tarifa_zero",
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "tema": "contraste",
+      "estado": "calor",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 10
+        }
+      ]
+    },
+    {
+      "tema": "contraste",
+      "estado": "calor_extremo",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 10
+        }
+      ]
+    },
+    {
+      "tema": "contraste",
+      "estado": "agua",
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "tema": "contraste",
+      "estado": "automacao",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 6
+        }
+      ]
+    },
+    {
+      "tema": "contraste",
+      "estado": "automacao_invalida",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 6
+        }
+      ]
+    },
+    {
+      "tema": "contraste",
+      "estado": "tarifa_zero",
+      "violations": [],
+      "incomplete": []
+    }
+  ],
+  "erros_js": [],
+  "evidencias_iniciais": {
+    "sondagem": [
+      {
+        "caso": "falha marcada com leitura vazia",
+        "bomba": "Ligada",
+        "estado": "Aquecendo",
+        "motivo": "Coletor pelo menos 4 °C mais quente: circulação de aquecimento ligada.",
+        "erro": "Revise os campos: os resultados exibidos correspondem ao último cenário válido."
+      },
+      {
+        "caso": "campo avançado inválido em details fechado",
+        "details": false,
+        "foco": "",
+        "erro": "Revise os campos: os resultados exibidos correspondem ao último cenário válido."
+      },
+      {
+        "caso": "aquecimento extremo permitido",
+        "horas": "2.034.861,1 h",
+        "overflow": false,
+        "rotulos": [
+          {
+            "texto": "0,0",
+            "x": 76.69999694824219,
+            "direita": 93.69999694824219,
+            "largura": 17
+          },
+          {
+            "texto": "508.715,3",
+            "x": 102.55000305175781,
+            "direita": 154.54998779296875,
+            "largura": 51.99998474121094
+          },
+          {
+            "texto": "1.017.430,6",
+            "x": 142.39999389648438,
+            "direita": 201.39999389648438,
+            "largura": 59
+          },
+          {
+            "texto": "1.526.145,8",
+            "x": 185.24998474121094,
+            "direita": 245.24998474121094,
+            "largura": 60
+          },
+          {
+            "texto": "2.034.861,1",
+            "x": 228.59999084472656,
+            "direita": 288.5999755859375,
+            "largura": 59.99998474121094
+          }
+        ]
+      }
+    ],
+    "automacao_reflow": {
+      "pagina": "automacao",
+      "largura": 320,
+      "leitura": 200,
+      "scroll": 382,
+      "estado": "Aquecendo"
+    },
+    "abas_por_fragmento": [
+      {
+        "url": "simuladores.html",
+        "scroll": 0,
+        "header": {
+          "x": 0,
+          "y": 43,
+          "width": 390,
+          "height": 77,
+          "top": 43,
+          "right": 390,
+          "bottom": 120,
+          "left": 0
+        },
+        "tabs": [
+          {
+            "id": "aba-aquecimento",
+            "r": {
+              "x": 20,
+              "y": 464.21875,
+              "width": 116.65625,
+              "height": 88.171875,
+              "top": 464.21875,
+              "right": 136.65625,
+              "bottom": 552.390625,
+              "left": 20
+            }
+          },
+          {
+            "id": "aba-agua",
+            "r": {
+              "x": 136.65625,
+              "y": 464.21875,
+              "width": 116.671875,
+              "height": 88.171875,
+              "top": 464.21875,
+              "right": 253.328125,
+              "bottom": 552.390625,
+              "left": 136.65625
+            }
+          },
+          {
+            "id": "aba-automacao",
+            "r": {
+              "x": 253.328125,
+              "y": 464.21875,
+              "width": 116.671875,
+              "height": 88.171875,
+              "top": 464.21875,
+              "right": 370,
+              "bottom": 552.390625,
+              "left": 253.328125
+            }
+          }
+        ],
+        "violations": []
+      },
+      {
+        "url": "simuladores.html#aquecimento",
+        "scroll": 473,
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 77,
+          "top": 0,
+          "right": 390,
+          "bottom": 77,
+          "left": 0
+        },
+        "tabs": [
+          {
+            "id": "aba-aquecimento",
+            "r": {
+              "x": 20,
+              "y": -8.78125,
+              "width": 116.65625,
+              "height": 88.171875,
+              "top": -8.78125,
+              "right": 136.65625,
+              "bottom": 79.390625,
+              "left": 20
+            }
+          },
+          {
+            "id": "aba-agua",
+            "r": {
+              "x": 136.65625,
+              "y": -8.78125,
+              "width": 116.671875,
+              "height": 88.171875,
+              "top": -8.78125,
+              "right": 253.328125,
+              "bottom": 79.390625,
+              "left": 136.65625
+            }
+          },
+          {
+            "id": "aba-automacao",
+            "r": {
+              "x": 253.328125,
+              "y": -8.78125,
+              "width": 116.671875,
+              "height": 88.171875,
+              "top": -8.78125,
+              "right": 370,
+              "bottom": 79.390625,
+              "left": 253.328125
+            }
+          }
+        ],
+        "violations": [
+          {
+            "id": "target-size",
+            "target": [
+              [
+                "#aba-aquecimento"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "url": "simuladores.html#agua",
+        "scroll": 473,
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 77,
+          "top": 0,
+          "right": 390,
+          "bottom": 77,
+          "left": 0
+        },
+        "tabs": [
+          {
+            "id": "aba-aquecimento",
+            "r": {
+              "x": 20,
+              "y": -8.78125,
+              "width": 116.65625,
+              "height": 88.171875,
+              "top": -8.78125,
+              "right": 136.65625,
+              "bottom": 79.390625,
+              "left": 20
+            }
+          },
+          {
+            "id": "aba-agua",
+            "r": {
+              "x": 136.65625,
+              "y": -8.78125,
+              "width": 116.671875,
+              "height": 88.171875,
+              "top": -8.78125,
+              "right": 253.328125,
+              "bottom": 79.390625,
+              "left": 136.65625
+            }
+          },
+          {
+            "id": "aba-automacao",
+            "r": {
+              "x": 253.328125,
+              "y": -8.78125,
+              "width": 116.671875,
+              "height": 88.171875,
+              "top": -8.78125,
+              "right": 370,
+              "bottom": 79.390625,
+              "left": 253.328125
+            }
+          }
+        ],
+        "violations": []
+      },
+      {
+        "url": "simuladores.html#automacao",
+        "scroll": 473,
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 77,
+          "top": 0,
+          "right": 390,
+          "bottom": 77,
+          "left": 0
+        },
+        "tabs": [
+          {
+            "id": "aba-aquecimento",
+            "r": {
+              "x": 20,
+              "y": -8.78125,
+              "width": 116.65625,
+              "height": 88.171875,
+              "top": -8.78125,
+              "right": 136.65625,
+              "bottom": 79.390625,
+              "left": 20
+            }
+          },
+          {
+            "id": "aba-agua",
+            "r": {
+              "x": 136.65625,
+              "y": -8.78125,
+              "width": 116.671875,
+              "height": 88.171875,
+              "top": -8.78125,
+              "right": 253.328125,
+              "bottom": 79.390625,
+              "left": 136.65625
+            }
+          },
+          {
+            "id": "aba-automacao",
+            "r": {
+              "x": 253.328125,
+              "y": -8.78125,
+              "width": 116.671875,
+              "height": 88.171875,
+              "top": -8.78125,
+              "right": 370,
+              "bottom": 79.390625,
+              "left": 253.328125
+            }
+          }
+        ],
+        "violations": []
+      }
+    ],
+    "arquivos_publicados_iguais_ao_estado_inicial": [
+      {
+        "arquivo": "simuladores.html",
+        "status": 200,
+        "igual_ao_local": true
+      },
+      {
+        "arquivo": "comparativos.html",
+        "status": 200,
+        "igual_ao_local": true
+      },
+      {
+        "arquivo": "assets/js/simuladores.js",
+        "status": 200,
+        "igual_ao_local": true
+      },
+      {
+        "arquivo": "assets/js/modelos.js",
+        "status": 200,
+        "igual_ao_local": true
+      }
+    ]
+  },
+  "limites": [
+    "Auditorias axe realizadas em Chromium; testes funcionais e numéricos realizados nos três motores de navegador.",
+    "Simulações didáticas sem equipamentos conectados. Não houve validação de campo ou teste humano com leitores de tela."
+  ]
+}

@@ -49,6 +49,8 @@ Essa mídia serve somente ao teste de controles; não é uma explicação em Lib
 
 ## Registro desta versão
 
+Revisão específica dos simuladores em 14/10/2026: [relatório de falhas e correções](relatorio-simuladores-2026-10-14.md). Os números abaixo registram a revisão completa anterior, de 09/10/2026.
+
 Revisão em 9 de outubro de 2026, com Playwright, Chromium 151, Firefox 153, WebKit 26.5 e axe-core 4.10.3:
 
 - 30 auditorias axe: oito páginas em dois temas, mais leitura a 200%, abas de água/automação e modal, com zero violações detectadas nas regras executadas.

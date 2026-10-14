@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://ryan20014737472.github.io/Projeto-integrador-1.2/sitemap.xml
+Sitemap: https://ghostnomzer.github.io/Projeto-integrador-1.2/sitemap.xml
 

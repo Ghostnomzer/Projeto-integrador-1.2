@@ -18,23 +18,42 @@
       input.setAttribute('aria-valuetext',`${f(Number(input.value),0)} ${unidade}`);
     });
   }
-  function prepararFormulario(formId,errorId,calcular,aoRestaurar=()=>{}) {
+  function prepararFormulario(formId,errorId,calcular,aoRestaurar=()=>{},aoInvalidar=null) {
     const form=$(formId);if(!form)return null;
+    // A validação explícita permite revelar campos dentro de details antes de focá-los.
+    form.noValidate=true;
     function atualizar() {
       atualizarFaixas(form);
       if(!form.checkValidity()) {
-        texto(errorId,'Revise os campos: os resultados exibidos correspondem ao último cenário válido.');
+        texto(errorId,aoInvalidar ? aoInvalidar(ler(form)) : 'Revise os campos: os resultados exibidos correspondem ao último cenário válido.');
         return;
       }
       try { calcular(ler(form));texto(errorId,''); }
-      catch(error) {texto(errorId,error.message);}
+      catch(error) {if(aoInvalidar)aoInvalidar(ler(form));texto(errorId,error.message);}
     }
     form.addEventListener('input',atualizar);
-    form.addEventListener('submit',event=>{event.preventDefault();if(form.reportValidity())atualizar();});
+    form.addEventListener('submit',event=>{
+      event.preventDefault();
+      const invalidos=[...form.querySelectorAll('input:invalid')];
+      for(const invalido of invalidos) {
+        let detalhes=invalido.closest('details');
+        while(detalhes){detalhes.open=true;detalhes=detalhes.parentElement.closest('details');}
+      }
+      atualizar();
+      if(!form.reportValidity())invalidos[0]?.focus();
+    });
     form.addEventListener('reset',()=>setTimeout(()=>{aoRestaurar();atualizar();},0));
     atualizar();return {form,atualizar};
   }
   const tabs=Array.from(document.querySelectorAll('[role=tab]'));
+  const grupoAbas=tabs[0]?.closest('[role=tablist]');
+  const cabecalho=document.querySelector('.site-header');
+  function ajustarPosicaoAbas() {
+    const compensacao=Math.max(0,cabecalho.getBoundingClientRect().height+16-(parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop)||0));
+    grupoAbas.style.scrollMarginTop=`${compensacao}px`;
+    const deslocamento=grupoAbas.getBoundingClientRect().height+(parseFloat(getComputedStyle(grupoAbas).marginBottom)||0)+compensacao;
+    tabs.forEach(tab=>{$(tab.getAttribute('aria-controls')).style.scrollMarginTop=`${Math.ceil(deslocamento)}px`;});
+  }
   function ativarAba(tab,focus=false,hash=true) {
     for(const button of tabs) {
       const ativa=button===tab;
@@ -55,7 +74,22 @@
     });
   });
   function abaDoHash(){return tabs.find(t=>t.getAttribute('aria-controls')===location.hash.slice(1));}
-  if(tabs.length){ativarAba(abaDoHash() || tabs[0],false,false);window.addEventListener('hashchange',()=>{const tab=abaDoHash();if(tab)ativarAba(tab,false,false);});}
+  function mostrarAbas(){ajustarPosicaoAbas();grupoAbas.scrollIntoView({block:'start',behavior:'instant'});}
+  if(tabs.length){
+    ativarAba(abaDoHash() || tabs[0],false,false);
+    const posicaoAbas=new ResizeObserver(ajustarPosicaoAbas);
+    posicaoAbas.observe(grupoAbas);posicaoAbas.observe(cabecalho);
+    ajustarPosicaoAbas();
+    grupoAbas.addEventListener('focusin',()=>{
+      if(document.activeElement.getBoundingClientRect().top<cabecalho.getBoundingClientRect().bottom)mostrarAbas();
+    });
+    window.addEventListener('hashchange',()=>{const tab=abaDoHash();if(tab){ativarAba(tab,false,false);mostrarAbas();}});
+    if(abaDoHash()) {
+      const posicionar=()=>document.fonts.ready.then(()=>requestAnimationFrame(mostrarAbas));
+      if(document.readyState==='complete')posicionar();
+      else window.addEventListener('load',posicionar,{once:true});
+    }
+  }
 
   let ultimoResultadoCalor=null;
   function desenharGrafico(r) {
@@ -69,14 +103,18 @@
     const minimo=Math.max(0,r.inicial-1),maximo=Math.max(r.inicial+1,r.inicial+amplitude+1);
     const y=v=>210-(v-minimo)/(maximo-minimo)*160;
     const tempoMax=projetavel?r.horas:0;
+    const abreviarTempo=tempoMax>=1000;
+    const cientifico=new Intl.NumberFormat('pt-BR',{notation:'scientific',maximumFractionDigits:1});
+    const tempoNoEixo=horas=>abreviarTempo?cientifico.format(horas):f(horas,1);
+    const exibirRotulo=indice=>largura>=420 || indice%2===0;
     const pontos=Array.from({length:5},(_,i)=>({horas:tempoMax*i/4,temp:r.inicial+amplitude*i/4,x:esquerda+(direita-esquerda)*i/4}));
     const linha=pontos.map(p=>`${p.x},${y(p.temp)}`).join(' ');
     const titulo='Projeção de temperatura da piscina';
     const desc=projetavel?`A água passa de ${f(r.inicial)} para ${f(r.alvo)} graus Celsius em ${f(r.horas)} horas sob condições constantes. Os dados estão na tabela abaixo.`:r.delta===0?'A meta já foi atingida. O modelo não acrescenta calor.':'Sem irradiância, o modelo não prevê aquecimento. A temperatura mostrada permanece na condição inicial.';
-    svg.innerHTML=`<title id="calor-grafico-titulo">${titulo}</title><desc id="calor-grafico-desc">${desc}</desc><text x="${esquerda}" y="22">Temperatura (°C)</text>${Array.from({length:5},(_,i)=>{const t=minimo+(maximo-minimo)*i/4;return `<line x1="${esquerda}" x2="${direita}" y1="${y(t)}" y2="${y(t)}" class="chart-grid"/><text x="${esquerda-12}" y="${y(t)+5}" text-anchor="end">${f(t,1)}</text>`;}).join('')}<path class="chart-area" d="M${esquerda} 210 L${linha.replaceAll(' ',' L')} L${direita} 210 Z"/><polyline class="chart-line" pathLength="1" points="${linha}"/>${pontos.map(p=>`<circle class="chart-point" cx="${p.x}" cy="${y(p.temp)}" r="5"/><text x="${p.x}" y="235" text-anchor="middle">${f(p.horas,1)}</text>`).join('')}<text x="${(esquerda+direita)/2}" y="264" text-anchor="middle" class="chart-axis-label">${projetavel?'Tempo de aquecimento (h)':'Sem evolução térmica'}</text>`;
+    svg.innerHTML=`<title id="calor-grafico-titulo">${titulo}</title><desc id="calor-grafico-desc">${desc}</desc><text x="${esquerda}" y="22">Temperatura (°C)</text>${Array.from({length:5},(_,i)=>{const t=minimo+(maximo-minimo)*i/4;return `<line x1="${esquerda}" x2="${direita}" y1="${y(t)}" y2="${y(t)}" class="chart-grid"/><text x="${esquerda-12}" y="${y(t)+5}" text-anchor="end">${f(t,1)}</text>`;}).join('')}<path class="chart-area" d="M${esquerda} 210 L${linha.replaceAll(' ',' L')} L${direita} 210 Z"/><polyline class="chart-line" pathLength="1" points="${linha}"/>${pontos.map((p,i)=>`<circle class="chart-point" cx="${p.x}" cy="${y(p.temp)}" r="5"/>${exibirRotulo(i)?`<text x="${p.x}" y="235" text-anchor="${i===0?'start':i===4?'end':'middle'}">${tempoNoEixo(p.horas)}</text>`:''}`).join('')}<text x="${(esquerda+direita)/2}" y="264" text-anchor="middle" class="chart-axis-label">${projetavel?'Tempo de aquecimento (h)':'Sem evolução térmica'}</text>`;
     const dados=projetavel?pontos:[pontos[0]];
     $('tabela-temperatura').innerHTML=dados.map(p=>`<tr><td>${f(p.horas,1)}</td><td>${f(p.temp,1)}</td></tr>`).join('');
-    texto('calor-grafico-nota',projetavel?'Curva idealizada com potência útil constante.':r.delta===0?'A meta foi atingida; não é necessário acrescentar calor.':'Sem energia solar disponível, não há projeção de aquecimento.');
+    texto('calor-grafico-nota',projetavel?`Curva idealizada com potência útil constante.${abreviarTempo?' O eixo usa notação científica: 1E3 h = 1.000 h. Os valores completos estão na tabela.':''}`:r.delta===0?'A meta foi atingida; não é necessário acrescentar calor.':'Sem energia solar disponível, não há projeção de aquecimento.');
   }
   const calor=prepararFormulario('form-calor','calor-erro',entrada=>{
     const r=modelos.aquecimento(entrada);
@@ -104,17 +142,24 @@
   });
 
   let bombaLigada=false,ultimoEvento='',contador=0;
-  const auto=prepararFormulario('form-automacao','automacao-erro',entrada=>{
-    entrada.falha=entrada.falha==='on';const r=modelos.automacao(entrada,bombaLigada);bombaLigada=r.ligada;
+  function mostrarAutomacao(r,entrada) {
+    bombaLigada=r.ligada;
     texto('auto-estado',{aquecendo:'Aquecendo',aguardando:'Aguardando',bloqueada:'Bloqueada'}[r.estado]);$('auto-estado').dataset.state=r.estado;
-    texto('auto-motivo',r.motivo);texto('auto-diferenca',`${f(r.diferenca)} °C`);texto('auto-nivel-resultado',`${f(Number(entrada.nivel),0)}%`);texto('auto-bomba',r.ligada?'Ligada':'Desligada');
+    texto('auto-motivo',r.motivo);texto('auto-diferenca',r.diferenca===null?'Sem leitura':`${f(r.diferenca)} °C`);texto('auto-nivel-resultado',`${f(Number(entrada.nivel),0)}%`);texto('auto-bomba',r.ligada?'Ligada':'Desligada');
     $('diagrama-automacao').classList.toggle('diagram-idle',!r.ligada);
     if(r.motivo!==ultimoEvento) {
       ultimoEvento=r.motivo;contador++;
       const li=document.createElement('li');const strong=document.createElement('strong');strong.textContent=`${contador}. ${r.ligada?'Bomba ligada':'Bomba desligada'} — `;li.append(strong,document.createTextNode(r.motivo));
       const lista=$('auto-historico');lista.prepend(li);while(lista.children.length>6)lista.lastElementChild.remove();
     }
-  },()=>{bombaLigada=false;ultimoEvento='';contador=0;$('auto-historico').replaceChildren();});
+  }
+  const auto=prepararFormulario('form-automacao','automacao-erro',entrada=>{
+    entrada.falha=entrada.falha==='on';mostrarAutomacao(modelos.automacao(entrada,bombaLigada),entrada);
+  },()=>{bombaLigada=false;ultimoEvento='';contador=0;$('auto-historico').replaceChildren();},entrada=>{
+    const motivo=entrada.falha==='on'?'Falha de sensor: circulação bloqueada até corrigir as leituras.':'Leitura inválida: circulação bloqueada até corrigir os campos.';
+    mostrarAutomacao({ligada:false,estado:'bloqueada',diferenca:null,motivo},entrada);
+    return 'Revise os campos: a bomba simulada foi desligada porque há leituras inválidas.';
+  });
   document.querySelectorAll('[data-auto-preset]').forEach(button=>button.addEventListener('click',()=>{
     const preset=button.dataset.autoPreset,form=auto.form;
     form.elements.piscina.value=22;form.elements.alvo.value=28;
@@ -129,7 +174,7 @@
     texto('comp-custo-solar',solar?'Sem previsão':`R$ ${f(r.custoSolar,2)}`);texto('comp-custo-eletrico',`R$ ${f(r.custoEletrico,2)}`);
     texto('comp-energia-solar',solar?'Sem aquecimento':`${f(r.energiaSolarRede,2)} kWh`);texto('comp-energia-eletrica',`${f(r.energiaEletrica,2)} kWh`);
     texto('comp-tempo-solar',solar?'Sem aquecimento':`${f(r.solar.horas)} h`);texto('comp-tempo-eletrico',`${f(r.horasEletrica)} h`);
-    texto('comp-insight',solar?'Sem irradiância, o cenário solar não atinge a meta. Não é possível calcular a diferença de custo.':r.solar.delta===0?'A meta já foi atingida. Nenhum dos cenários precisa acrescentar calor.':r.economia>=0?`Neste cenário, a diferença de custo operacional é de R$ ${f(r.economia,2)} a favor do solar.`:`Neste cenário, o solar custa R$ ${f(-r.economia,2)} a mais em eletricidade, devido ao tempo de circulação.`);
+    texto('comp-insight',solar?'Sem irradiância, o cenário solar não atinge a meta. Não é possível calcular a diferença de custo.':r.solar.delta===0?'A meta já foi atingida. Nenhum dos cenários precisa acrescentar calor.':r.economia===0?`Neste cenário, os custos operacionais são iguais: R$ ${f(r.custoSolar,2)} em cada sistema.`:r.economia>0?`Neste cenário, a diferença de custo operacional é de R$ ${f(r.economia,2)} a favor do solar.`:`Neste cenário, o solar custa R$ ${f(-r.economia,2)} a mais em eletricidade, devido ao tempo de circulação.`);
     texto('comp-barra-solar-label',solar?'Sem previsão':`${f(r.energiaSolarRede,2)} kWh`);texto('comp-barra-eletrica-label',`${f(r.energiaEletrica,2)} kWh`);
     const maior=Math.max(r.energiaSolarRede||0,r.energiaEletrica);
     $('comp-barra-solar').style.width=maior===0?'0%':`${100*(r.energiaSolarRede||0)/maior}%`;

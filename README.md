@@ -2,7 +2,7 @@
 
 Site educacional sobre uma proposta de piscina sustentável: aquecimento solar térmico, conservação da água, automação e inclusão digital.
 
-**Site publicado:** [Abrir Sol & Água](https://ryan20014737472.github.io/Projeto-integrador-1.2/)
+**Site publicado:** [Abrir Sol & Água](https://ghostnomzer.github.io/Projeto-integrador-1.2/)
 
 ## Conteúdo e tecnologia
 
@@ -26,7 +26,7 @@ node scripts/verificar.mjs
 
 As páginas HTML ficam na raiz e podem ser servidas diretamente. O workflow `.github/workflows/pages.yml` testa e publica `main`. Em **Settings → Pages**, a origem é **GitHub Actions**. `node scripts/publicar.mjs` prepara apenas os arquivos públicos em `_site/`, ignorado pelo Git.
 
-O GitHub Pages já está habilitado com a origem **GitHub Actions**. Novos envios para `main` executam as verificações e atualizam o site automaticamente. Também é possível executar **Run workflow** em [Actions](https://github.com/Ryan20014737472/Projeto-integrador-1.2/actions/workflows/pages.yml).
+O GitHub Pages já está habilitado com a origem **GitHub Actions**. Novos envios para `main` executam as verificações e atualizam o site automaticamente. Também é possível executar **Run workflow** em [Actions](https://github.com/Ghostnomzer/Projeto-integrador-1.2/actions/workflows/pages.yml).
 
 ## Editar
 
@@ -44,6 +44,7 @@ Após editar templates, execute `node scripts/construir.mjs` e envie os HTML atu
 
 ## Documentação
 
+- [Revisão dos simuladores — 14/10/2026](docs/relatorio-simuladores-2026-10-14.md)
 - [Relatório da revisão completa — 09/10/2026](docs/relatorio-revisao-2026-10-09.md)
 - [Critérios da avaliação](docs/criterios-avaliacao.md)
 - [Cálculos e fontes](docs/calculos-e-fontes.md)

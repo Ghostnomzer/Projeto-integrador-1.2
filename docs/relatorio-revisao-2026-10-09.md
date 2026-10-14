@@ -1,8 +1,12 @@
 # Relatório de revisão — Sol & Água
 
-**Data:** 9 de outubro de 2026  
-**Site:** <https://ryan20014737472.github.io/Projeto-integrador-1.2/>  
-**Repositório:** <https://github.com/Ryan20014737472/Projeto-integrador-1.2>
+**Data:** 9 de outubro de 2026
+
+**Site:** <https://ghostnomzer.github.io/Projeto-integrador-1.2/>
+
+**Repositório:** <https://github.com/Ghostnomzer/Projeto-integrador-1.2>
+
+*Endereços atualizados em 14/10/2026; os resultados abaixo correspondem à revisão de 09/10/2026.*
 
 ## Resultado
 
@@ -112,4 +116,4 @@ Os comandos de navegador pressupõem um servidor em `http://127.0.0.1:4173/` e a
 - [Testes funcionais e de regressão](../testes/revisao.py)
 - [Auditoria de acessibilidade](../testes/navegador.py)
 - [Testes científicos](../testes/modelos.test.cjs)
-- [Histórico de publicação no GitHub Actions](https://github.com/Ryan20014737472/Projeto-integrador-1.2/actions/workflows/pages.yml)
+- [Histórico de publicação no GitHub Actions](https://github.com/Ghostnomzer/Projeto-integrador-1.2/actions/workflows/pages.yml)

@@ -197,6 +197,10 @@ def cena(page):
 def abas(page):
     ir(page, 'simuladores.html#agua')
     expect(page.locator('#aba-agua')).to_have_attribute('aria-selected', 'true')
+    page.wait_for_function('''() => {
+        const header=document.querySelector('.site-header').getBoundingClientRect();
+        return document.querySelector('[role=tablist]').getBoundingClientRect().top>=header.bottom;
+    }''')
     page.locator('#aba-agua').focus()
     for tecla, destino in [('End', 'automacao'), ('ArrowRight', 'aquecimento'),
                            ('ArrowLeft', 'automacao'), ('Home', 'aquecimento'), ('ArrowRight', 'agua')]:
@@ -207,6 +211,18 @@ def abas(page):
     page.evaluate('location.hash="automacao"')
     expect(page.locator('#aba-automacao')).to_have_attribute('aria-selected', 'true')
     assert page.locator('[role=tab][tabindex="0"]').count() == 1
+    page.goto(base+'simuladores.html#automacao')
+    page.wait_for_function('''() => document.querySelector('[role=tablist]').getBoundingClientRect().top>=document.querySelector('.site-header').getBoundingClientRect().bottom''')
+    page.locator('[data-open-accessibility]').click()
+    page.locator('dialog [data-setting=dislexia]').check()
+    page.locator('dialog [data-setting=espaco]').check()
+    for _ in range(10):
+        page.locator('dialog [data-size="1"]').click()
+    page.keyboard.press('Escape')
+    page.goto(base+'simuladores.html#automacao')
+    page.evaluate('document.fonts.ready')
+    page.locator('#aba-automacao').focus()
+    page.wait_for_function('''() => document.querySelector('[role=tablist]').getBoundingClientRect().top>=document.querySelector('.site-header').getBoundingClientRect().bottom''')
 
 
 def aquecimento(page):
@@ -263,6 +279,36 @@ def calor_limites(page):
     expect(page.locator('#calor-estado')).to_have_text('Meta já atingida')
     expect(page.locator('#calor-energia')).to_contain_text('0,0')
     expect(page.locator('#calor-horas')).to_contain_text('0,0')
+    page.locator('#form-calor button[type=reset]').click()
+    page.locator('#form-calor details summary').click()
+    page.locator('#calor-eficiencia').fill('')
+    page.locator('#form-calor details summary').click()
+    page.locator('#form-calor button[type=submit]').click()
+    assert page.locator('#form-calor details').evaluate('(e)=>e.open')
+    expect(page.locator('#calor-eficiencia')).to_be_focused()
+    expect(page.locator('#calor-horas')).to_contain_text('13,2')
+    page.locator('#calor-volume').fill('')
+    page.locator('#form-calor details summary').click()
+    page.locator('#form-calor button[type=submit]').click()
+    assert page.locator('#form-calor details').evaluate('(e)=>e.open')
+    expect(page.locator('#calor-volume')).to_be_focused()
+    for id_, valor in {'calor-volume': '100000', 'calor-area': '1', 'calor-inicial': '5',
+                      'calor-alvo': '40', 'calor-sol': '50', 'calor-eficiencia': '10', 'calor-perdas': '60'}.items():
+        page.locator('#' + id_).fill(valor)
+    expect(page.locator('#calor-horas')).to_contain_text('2.034.861,1')
+    expect(page.locator('#calor-grafico-nota')).to_contain_text('notação científica')
+    for largura in [320, 390, 768, 1440]:
+        page.set_viewport_size({'width': largura, 'height': 900})
+        page.wait_for_function('''() => {
+            const svg=document.getElementById('grafico-temperatura');
+            return Math.abs(Number(svg.getAttribute('viewBox').split(' ')[2])-Math.max(280,Math.round(svg.getBoundingClientRect().width)))<1;
+        }''')
+        # Verifica a legibilidade efetiva das caixas de texto, independentemente do formato escolhido.
+        assert page.locator('#grafico-temperatura text[y="235"]').evaluate_all('''els => {
+            const caixas=els.map(e=>e.getBoundingClientRect());
+            return caixas.every((r,i)=>i===0 || caixas[i-1].right<=r.left+1);
+        }''')
+        assert not page.evaluate('document.documentElement.scrollWidth > innerWidth + 1')
 
 
 def agua(page):
@@ -321,10 +367,40 @@ def automacao(page):
     page.locator('#form-automacao button[type=submit]').click()
     assert page.locator('#auto-historico').inner_text() == historico
     page.locator('#auto-piscina').fill('')
-    expect(page.locator('#automacao-erro')).to_contain_text('último cenário válido')
+    expect(page.locator('#automacao-erro')).to_contain_text('bomba simulada foi desligada')
     page.locator('#form-automacao button[type=reset]').click()
     expect(page.locator('#auto-bomba')).to_have_text('Ligada')
     expect(page.locator('#auto-historico li')).to_have_count(1)
+    page.locator('#auto-coletor').fill('25')
+    expect(page.locator('#auto-bomba')).to_have_text('Ligada')
+    page.locator('#auto-piscina').fill('')
+    expect(page.locator('#auto-bomba')).to_have_text('Desligada')
+    expect(page.locator('#auto-estado')).to_have_text('Bloqueada')
+    expect(page.locator('#auto-diferenca')).to_have_text('Sem leitura')
+    page.locator('#auto-falha').check()
+    expect(page.locator('#auto-motivo')).to_contain_text('Falha de sensor')
+    page.locator('#auto-falha').uncheck()
+    page.locator('#auto-piscina').fill('22')
+    expect(page.locator('#auto-bomba')).to_have_text('Desligada')
+    page.locator('#auto-coletor').fill('26')
+    expect(page.locator('#auto-bomba')).to_have_text('Ligada')
+    for id_, valor in [('auto-piscina', '100'), ('auto-coletor', '25.3'), ('auto-alvo', '')]:
+        page.locator('#' + id_).fill(valor)
+        expect(page.locator('#auto-bomba')).to_have_text('Desligada')
+        expect(page.locator('#auto-estado')).to_have_text('Bloqueada')
+        page.locator('#form-automacao button[type=reset]').click()
+        expect(page.locator('#auto-bomba')).to_have_text('Ligada')
+    page.locator('[data-open-accessibility]').click()
+    for chave in ['dislexia', 'espaco', 'contraste']:
+        page.locator(f'dialog [data-setting={chave}]').check()
+    for _ in range(10):
+        page.locator('dialog [data-size="1"]').click()
+    page.keyboard.press('Escape')
+    page.set_viewport_size({'width': 320, 'height': 900})
+    page.evaluate('document.fonts.ready')
+    for preset in ['sol', 'frio', 'baixo', 'falha']:
+        page.locator(f'[data-auto-preset={preset}]').click()
+        assert not page.evaluate('document.documentElement.scrollWidth > innerWidth + 1')
 
 
 def comparativo(page):
@@ -338,6 +414,7 @@ def comparativo(page):
     page.locator('#comp-tarifa').fill('0')
     expect(page.locator('#comp-custo-solar')).to_have_text('R$ 0,00')
     expect(page.locator('#comp-custo-eletrico')).to_have_text('R$ 0,00')
+    expect(page.locator('#comp-insight')).to_contain_text('custos operacionais são iguais')
     page.locator('#form-comparativo button[type=reset]').click()
     expect(page.locator('#comp-volume')).to_have_value('10000')
     page.locator('#comp-sol').fill('10')
